@@ -1,0 +1,64 @@
+<app-header titulo="Configuración"></app-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <form autocomplete="off" [formGroup]="form" (ngSubmit)="visualizar()">
+      <ion-row>
+        <ion-col size="12" size-lg="6">
+          <ion-item>
+            <ion-label>Categoría</ion-label>
+            <ion-select value="brown" okText="Seleccionar" cancelText="Cancelar" formControlName="categoria">
+              <ion-select-option [value]="item.name" *ngFor="let item of  categories ,i">{{item.description}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12" size-lg="6">
+          <ion-item>
+            <ion-label>Frecuencia de recarga de noticias:</ion-label>
+            <ion-input type="number" min="60" max="3600" step="30" formControlName="frecuencia" required
+              placeholder="Frecuencia">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>Tipo de fuente:</ion-label>
+          <ion-radio-group formControlName="font">
+            <ion-item>
+              <ion-label></ion-label>
+              <ion-radio value=""></ion-radio>
+            </ion-item>
+            <ion-col size="12" size-md="4" size-lg="3" *ngFor="let item of  fonts">
+              <ion-item>
+                <ion-label [style]="item.name">{{item.description}}</ion-label>
+                <ion-radio [value]="item.name"></ion-radio>
+              </ion-item>
+            </ion-col>
+
+
+
+
+
+
+          </ion-radio-group>
+        </ion-col>
+      </ion-row>
+
+    </form>
+    <ion-col size="12">
+      <ion-button [disabled]="form.invalid" [routerLink]="['/news']"
+        [queryParams]="{category: form.value.categoria,frecuency:form.value.frecuencia,font:form.value.font}"
+        expand="block">
+        Buscar noticias
+      </ion-button>
+
+
+
+    </ion-col>
+    <ion-row>
+    </ion-row>
+  </ion-grid>
+</ion-content>

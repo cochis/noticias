@@ -74,6 +74,10 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  //Fonts
+  //-----------------------------------
+  @import url('https://fonts.googleapis.com/css2?family=Acme&family=Bebas+Neue&family=Homemade+Apple&family=Hurricane&family=Indie+Flower&family=Oswald:wght@500&family=Parisienne&family=Passions+Conflict&family=Permanent+Marker&family=Press+Start+2P&display=swap');
 }
 
 @media (prefers-color-scheme: dark) {

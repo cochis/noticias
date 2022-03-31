@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "noticias-oarrs": {
+      "hosting": {
+        "app": [
+          "noticias-oarrs"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "noticias-oarrs"
+  }
+}
